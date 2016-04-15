@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js'></script>
+    <script src='index.compiled.js'></script>
+    <!-- Mustache --> 
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <!-- Mustache Templates (Views) -->
+    <script id='card-template-deck' type='template/text'>
+      {{#cards}}
+        <div style='left:{{left}}px; top:{{top}}px' class='deck-card'> 
+        </div>
+     {{/cards}}
+    </script>
+    <script id='dealer-card-template' type='text/template' >
+      {{#cards}}
+        {{#show}}
+          <div class=''>
+            <h5>{{rank}}</h5>
+            <h5>{{suit}}</h5>
+          </div>
+        {{/show}}
+        {{^show}}
+          <div class=''>
+            <h5>Hidden</h5>
+          </div>
+        {{/show}}
+       {{/cards}}
+    </script>
+    <script id ='card-template' type='text/template' >
+       {{#cards}}
+        {{#back}}
+          <div class='card back'>
+          </div>
+        {{/back}}
+        {{#front}}
+          <div class='card {{color}}'>
+            <h5 class='rank rank-top '>{{rank}}</h5>
+            <h5 class='suit' >{{suit}}</h5>
+            <h5 class='rank rank-bottom'> {{rank}} </h5>
+          </div>
+        {{/front}}
+       {{/cards}}
+    </script>
+    <script id='buttons' type='template/text'>
+      
+    </script>
+    <!--/-->
+    <div class='top-container'>
+      <header>Blackjack</header>
+    </div>
+    <main>
+     
+    </main>
+  </body>
+</html>
