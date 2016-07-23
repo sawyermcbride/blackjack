@@ -28,7 +28,7 @@ Player.prototype.handsLength = function() {
 }
 Player.prototype.hit = function(handNum) {
   var handToHit = handNum || 0;
-  this.hands[handToHit].push(Deck.pick());
+  this.hands[handToHit].pusah(Deck.pick());
 }
 Player.prototype.split = function(handNum) {
   var handToSplit = handNum || 0;

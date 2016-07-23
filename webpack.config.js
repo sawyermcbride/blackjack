@@ -12,7 +12,7 @@ module.exports = {
 		moduleDirectorys: ['node_modules', 'src'],
 		extensions: ['','.js','.jsx']
 	},
-  plugins: [	
-		new webpack.NoErrorsPlugin()
+  plugins: [
+		new webpack.NoErrorsPlugin()  
   ]
 }

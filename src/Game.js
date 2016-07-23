@@ -25,6 +25,9 @@ Game.prototype.start = function() {
  * - Set bet for each player
  */
 Game.prototype.deal = function() {
+  if(this.deckLength() < numPlayers*2+2)
+    Deck.shuffle(true);
+
   this.players.forEach( function(player) {
     player.deal();
   });
@@ -71,6 +74,11 @@ Game.prototype.finish = function() {
   
 }
 Game.prototype.hitPlayer = function(id) {
+  if(this.deckLength() < numPlayers*2+2)
+    Deck.shuffle(true);
+  
+  if(this.deckLength() < numPlayers*2+2)
+    Deck.shuffle(true);
   this.players[id].hit();
 }
 Game.prototype.getPlayerStatus = function(id) {

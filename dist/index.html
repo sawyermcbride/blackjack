@@ -11,19 +11,19 @@
     <script id='card-template-deck' type='template/text'>
       {{#cards}}
         <div style='left:{{left}}px; top:{{top}}px' class='deck-card'> 
-        </div>
+        </div>  
      {{/cards}}
     </script>
     <script id='dealer-card-template' type='text/template' >
       {{#cards}}
         {{#show}}
-          <div class=''>
+          <div class='card {{color}} '>
             <h5>{{rank}}</h5>
             <h5>{{suit}}</h5>
           </div>
         {{/show}}
         {{^show}}
-          <div class=''>
+          <div class='card {{color}} '>
             <h5>Hidden</h5>
           </div>
         {{/show}}
@@ -38,21 +38,29 @@
         {{#front}}
           <div class='card {{color}}'>
             <h5 class='rank rank-top '>{{rank}}</h5>
-            <h5 class='suit' >{{suit}}</h5>
+            <h5 class='suit's >{{suit}}</h5>
             <h5 class='rank rank-bottom'> {{rank}} </h5>
           </div>
         {{/front}}
        {{/cards}}
     </script>
-    <script id='buttons' type='template/text'>
-      
+    <!--put {hit:disabled}} in the object to add the disabled class to the button-->
+    <script id='buttons-template' type='template/text'>
+      <button class='ctrl-btn' {{deal}} id='deal-btn'>Deal</button>
+      <button class='ctrl-btn' {{hit}} id='hit-btn'> Hit</button>
+      <button class='ctrl-btn' {{stay}} id='stay-btn'>Stay</button>
+      <button class='ctrl-btn small-btn' {{split}} id='split-btn'> Split </button>
+      <button class='ctrl-btn small-btn' {{double}} id='double-btn'> Double </button>
     </script>
     <!--/-->
     <div class='top-container'>
       <header>Blackjack</header>
     </div>
     <main>
-     
+      <section class='deck'></section>
+      <section class='dealer'>SAWYER IS COOl</section>
+      <section class='player'></section>
+      <section class='buttons'></section>
     </main>
   </body>
 </html>
